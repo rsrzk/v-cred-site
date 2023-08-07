@@ -20,6 +20,13 @@ module.exports = {
       primary: "#4A6CF7",
       yellow: "#FBB040",
       "body-color": "#959CB1",
+      
+      //timeline
+      appBackground: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
+      tagAppIdeas: '#FFDB14',
+      tagBlog: '#e17b77',
+      tagTwitter: '#1DA1F2',
+      tagMedium: '#018f69'
     },
     screens: {
       xs: "450px",

@@ -30,4 +30,131 @@
   input#checkboxLabel:checked ~ .box span {
     @apply opacity-100;
   }
+
+/* timeline */
+  .timeline-container {
+    @apply flex flex-col items-center;
+    @apply relative;
+    @apply mt-8;
+  }
+  
+  .timeline-container::after {
+    background-color: #e17b77;
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+  }
+  
+  .timeline-item {
+    @apply flex justify-end;
+    @apply relative;
+    @apply mb-8;
+    @apply w-[50%];
+  }
+  
+  .timeline-item:nth-child(even) {
+    @apply justify-start;
+    @apply pl-8 pr-0;
+  }
+  
+  .timeline-item-content {
+    @apply shadow-md rounded-[5px];
+    @apply bg-white;
+    @apply flex flex-col items-start;
+    @apply p-[4];
+    @apply w-[350px];
+    @apply text-left;
+    @apply relative;
+  }
+  
+  .timeline-item-content::after {
+    content: ' ';
+    background-color: #fff;
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: -7.5px;
+    top: calc(50% - 7.5px);
+    transform: rotate(45deg);
+    width: 15px;
+    height: 15px;
+  }
+  
+  .timeline-item:nth-child(even) .timeline-item-content {
+    text-align: right;
+    align-items: flex-end;
+  }
+  
+  .timeline-item:nth-child(even) .timeline-item-content::after {
+    right: -7.5px;
+    left: auto;
+    box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.2);
+  }
+  
+  .timeline-item-content .tag {
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    top: 4px;
+    left: 4px;
+    letter-spacing: 1px;
+    padding: 2px 4px;
+    position: absolute;
+    text-transform: uppercase;
+  }
+  
+  .timeline-item:nth-child(even) .timeline-item-content .tag {
+    left: auto;
+    right: 4px;
+  }
+  
+  .timeline-item-content time {
+    color: #777;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .timeline-item-content p {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 8px 0;
+    max-width: 100%;
+  }
+  
+  .timeline-item-content a {
+    color: #333;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .timeline-item-content a::after {
+    content: ' ►';
+    font-size: 10px;
+  }
+  
+  .timeline-item-content .circle {
+    background-color: #fff;
+    border: 3px solid #e17b77;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 8px);
+    left: -32px;
+    width: 16px;
+    height: 16px;
+    z-index: 100;
+  }
+  
+  .timeline-item:nth-child(even) .timeline-item-content .circle {
+    left: auto;
+    right: -32px;
+  }
+  
+  @media only screen and (max-width: 1023px) {
+    .timeline-item-content {
+      max-width: 100%;
+    }
+  }
 }

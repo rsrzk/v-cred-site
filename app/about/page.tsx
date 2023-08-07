@@ -1,5 +1,6 @@
 import AboutSectionOne from "@/components/About/AboutSectionOne";
-import AboutSectionTwo from "@/components/About/AboutSectionTwo";
+import AboutTeam from "@/components/About/AboutTeam";
+import Timeline from "@/components/About/Timeline";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 
 const AboutPage = () => {
@@ -9,8 +10,9 @@ const AboutPage = () => {
         pageName="About Page"
         description="Our journey as a PETRONAS-backed startup."
       />
+      {/* <Timeline /> */}
       <AboutSectionOne />
-      <AboutSectionTwo />
+      <AboutTeam />
     </>
   );
 };
