@@ -23,7 +23,7 @@ const AboutTeam = () => {
               <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
                 3 years experience in venture building and Deep Learning research at PETRONAS. May graduated from Imperial College London (ICL) with a Master of Science in Geophysics. In her spare time, May enjoys dancing to K-Pop and networking despite being a self-proclaimed introvert.
               </p>
-              <a href="https://www.linkedin.com/in/may-law" target="_blank">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/may-law" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
 
             <div
@@ -43,7 +43,7 @@ const AboutTeam = () => {
               <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
                 A certified accountant with 4 years experience at PETRONAS. Rais graduated from the University of Sydney in a Bachelor of Commerce, but spent more time exploring the city than studying. He feels every problem can be solved with Excel and Power BI.
               </p>
-              <a href="https://www.linkedin.com/in/raisrazak" target="_blank">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/raisrazak" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>          
           </div>
 
@@ -65,7 +65,7 @@ const AboutTeam = () => {
               <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
                 Machine Learning Applied Scientist with 6 years’ experience at PETRONAS Research. Graduated cum laude from Texas A&M University with a Bachelor of Science in Petroleum Engineering. When Nian Wei is not learning the chords to a new ukelele tune, you can find him at a Friday night swing class, knitting a scarf or practicing yoga
               </p>
-              <a href="https://www.linkedin.com/in/nianweitan" target="_blank">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/nianweitan" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
 
             <div
@@ -85,7 +85,7 @@ const AboutTeam = () => {
               <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
                 Currently heading Innovation & Strategy portfolio at PETRONAS Advanced Materials, Zul is an accomplished Drilling Engineer. He has a Bachelor’s in Petroleum and Natural Gas Engineering from Penn State University. He enjoys making predictions about future outcomes to a mysteriously high degree of accuracy.
               </p>
-              <a href="https://www.linkedin.com/in/zulhilmiismail" target="_blank">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/zulhilmiismail" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>          
           </div>
         </div>
