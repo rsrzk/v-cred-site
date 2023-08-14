@@ -6,7 +6,7 @@ import Link from "next/link";
 async function getData() {
   const apiUrl = process.env.REACT_APP_API_URL;
   //const res = await fetch(`${apiUrl}/api/posts`, {
-  const res = await fetch('/api/posts', {
+  const res = await fetch("/api/posts", {
     cache: "no-store",
   })
 
