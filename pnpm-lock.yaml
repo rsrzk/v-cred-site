@@ -18,8 +18,8 @@ dependencies:
     specifier: 13.4.7
     version: 13.4.7(eslint@8.44.0)(typescript@5.0.4)
   mongoose:
-    specifier: 6.11.1
-    version: 6.11.1
+    specifier: ^6.11.5
+    version: 6.11.5
   next:
     specifier: ^13.4.13
     version: 13.4.13(@babel/core@7.22.10)(react-dom@18.2.0)(react@18.2.0)
@@ -5356,8 +5356,8 @@ packages:
       - aws-crt
     dev: false
 
-  /mongoose@6.11.1:
-    resolution: {integrity: sha512-AvQ8C5ZGF6GcsQhoRg/i7pbNZpb96qLGU5ICBllckp7qMOxcfUF1nA6JstZw841BqRcE6myZ/mx9CluEESaw5Q==}
+  /mongoose@6.11.5:
+    resolution: {integrity: sha512-ZarPe1rCHG4aVb78xLuok4BBIm0HMz/Y/CjxYXCk3Qz1mEhS7bPMy6ZhSX2/Dng//R7ei8719j6K87UVM/1b3g==}
     engines: {node: '>=12.0.0'}
     dependencies:
       bson: 4.7.2
