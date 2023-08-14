@@ -4,15 +4,21 @@ import Link from "next/link";
 
 async function getData() {
   const apiUrl = process.env.REACT_APP_API_URL;
-  const res = await fetch(`${apiUrl}/api/posts`, {
-    cache: "no-store",
-  })
+  try {
+    const res = await fetch(`${apiUrl}/api/posts`, {
+      cache: "no-store",
+    });
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
+    if (!res.ok) {
+      console.error(`API Error: Response status ${res.status}`);
+      throw new Error('Failed to fetch data');
+    }
+
+    return res.json();
+  } catch (error) {
+    console.error('API Error:', error);
+    throw error;
   }
- 
-  return res.json()
 }
 
 const Blog = async () => {

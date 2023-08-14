@@ -80,7 +80,7 @@ const AboutTeam = () => {
             </div>
             <div className="mb-9">
               <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                Zulilmi Ismail
+                Zulhilmi Ismail
               </h3>
               <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
                 Currently heading Innovation & Strategy portfolio at PETRONAS Advanced Materials, Zul is an accomplished Drilling Engineer. He has a Bachelor’s in Petroleum and Natural Gas Engineering from Penn State University. He enjoys making predictions about future outcomes to a mysteriously high degree of accuracy.
