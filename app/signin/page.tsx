@@ -38,7 +38,7 @@ const SigninPage = () => {
                   Sign in
                 </h3>
                 <p className="mb-11 text-center text-base font-medium text-body-color">
-                  View your company's subscribed tools and dashboard.
+                  View your company&apos;s subscribed tools and dashboard.
                 </p>
 
                 {/* GOOGLE SIGN IN
