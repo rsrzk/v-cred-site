@@ -1,10 +1,12 @@
+"use client"
 import Image from "next/image";
 import { notFound } from "next/navigation"
 
 
 async function getData(id: string) {
   const apiUrl = process.env.REACT_APP_API_URL;
-  const res = await fetch(`${apiUrl}/api/posts/${id}`, {
+  //const res = await fetch(`${apiUrl}/api/posts/${id}`, {
+  const res = await fetch(`/api/posts/${id}`, {
     cache: "no-store",
   })
 
