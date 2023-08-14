@@ -29,12 +29,12 @@ modify or copy the materials;<br/>
 use the materials for any commercial purpose or for any public display;<br/>
 attempt to reverse engineer any software contained on V CRED SDN. BHD.&apos;s Website;<br/>
 remove any copyright or other proprietary notations from the materials; or<br/>
-transferring the materials to another person or "mirror" the materials on any other server.<br/><br/>
+transferring the materials to another person or &quot;mirror&quot; the materials on any other server.<br/><br/>
 
 This will let V CRED SDN. BHD. to terminate upon violations of any of these restrictions. Upon termination, your viewing right will also be terminated and you should destroy any downloaded materials in your possession whether it is printed or electronic format. These Terms of Service has been created with the help of the Terms Of Service Generator.
 <br/><br/>
 3. Disclaimer<br/>
-All the materials on V CRED SDN. BHD.&apos;s Website are provided "as is". V CRED SDN. BHD. makes no warranties, may it be expressed or implied, therefore negates all other warranties. Furthermore, V CRED SDN. BHD. does not make any representations concerning the accuracy or reliability of the use of the materials on its Website or otherwise relating to such materials or any sites linked to this Website.
+All the materials on V CRED SDN. BHD.&apos;s Website are provided &quot;as is&quot;. V CRED SDN. BHD. makes no warranties, may it be expressed or implied, therefore negates all other warranties. Furthermore, V CRED SDN. BHD. does not make any representations concerning the accuracy or reliability of the use of the materials on its Website or otherwise relating to such materials or any sites linked to this Website.
 <br/><br/>
 4. Limitations<br/>
 V CRED SDN. BHD. or its suppliers will not be hold accountable for any damages that will arise with the use or inability to use the materials on V CRED SDN. BHD.&apos;s Website, even if V CRED SDN. BHD. or an authorize representative of this Website has been notified, orally or written, of the possibility of such damage. Some jurisdiction does not allow limitations on implied warranties or limitations of liability for incidental damages, these limitations may not apply to you.
