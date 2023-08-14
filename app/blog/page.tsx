@@ -1,13 +1,3 @@
-import React from 'react'
-
-const page = () => {
-  return (
-    <div>page</div>
-  )
-}
-
-export default page
-/*
 import SingleBlog from "@/components/Blog/SingleBlog";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import Link from "next/link";
@@ -113,4 +103,3 @@ const Blog = async () => {
 };
 
 export default Blog;
-*/

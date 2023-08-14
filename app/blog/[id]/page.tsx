@@ -1,13 +1,3 @@
-import React from 'react'
-
-const page = () => {
-  return (
-    <div>page</div>
-  )
-}
-
-export default page
-/*
 import Image from "next/image";
 import { notFound } from "next/navigation"
 
@@ -145,4 +135,3 @@ const BlogDetailsPage = async ({params}) => {
 };
 
 export default BlogDetailsPage;
-*/
