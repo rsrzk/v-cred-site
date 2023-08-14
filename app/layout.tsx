@@ -1,5 +1,6 @@
 "use client";
 
+import AuthProvider from "@/components/AuthProvider/AuthProvider";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -21,10 +22,12 @@ export default function RootLayout({
 
       <body className= "dark:bg-black">
         <Providers>
-          <Header />
-          {children}
-          <Footer />
-          <ScrollToTop />
+          <AuthProvider>
+            <Header />
+            {children}
+            <Footer />
+            <ScrollToTop />
+          </AuthProvider>
         </Providers>
       </body>
     </html>

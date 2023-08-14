@@ -1,6 +1,6 @@
 import { Menu } from "@/types/menu";
 
-const menuData: Menu[] = [
+export const unauthenticatedMenuData: Menu[] = [
   {
     id: 1,
     title: "Home",
@@ -13,12 +13,12 @@ const menuData: Menu[] = [
     path: "/about",
     newTab: false,
   },
-  {
+  /*{
     id: 3,
     title: "Blog",
     path: "/blog",
     newTab: false,
-  },
+  },*/
   {
     id: 4,
     title: "Sign in",
@@ -26,4 +26,24 @@ const menuData: Menu[] = [
     newTab: false,
   },
 ];
-export default menuData;
+
+export const authenticatedMenuData: Menu[] = [
+  {
+    id: 5,
+    title: "Dashboard",
+    path: "/dashboard",
+    newTab: false,
+  },
+  {
+    id: 6,
+    title: "Admin",
+    path: "/admin",
+    newTab: false,
+  },
+  {
+    id: 7,
+    title: "Profile",
+    path: "/profile",
+    newTab: false,
+  },
+];

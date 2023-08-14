@@ -1,6 +1,40 @@
+"use client"
+
+import React, { useState } from 'react';
+import styles from './page.module.css';
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const SignupPage = () => {
+  const [err,setErr] = useState(false);
+
+  const router = useRouter();
+  const handleSubmit = async (e)=>{
+    e.preventDefault();
+    const name = e.target[0].value;
+    const email = e.target[1].value;
+    const password = e.target[2].value;
+
+    try {
+      
+      const res = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+        })
+      });
+
+      res.status === 201 && router.push("/signup?success=Account has been created")
+
+    } catch (err) {
+      setErr(true);
+    }
+  };
   return (
     <>
       <section className="relative z-10 overflow-hidden pt-36 pb-16 md:pb-20 lg:pt-[180px] lg:pb-28">
@@ -9,11 +43,13 @@ const SignupPage = () => {
             <div className="w-full px-4">
               <div className="mx-auto max-w-[500px] rounded-md bg-primary bg-opacity-5 py-10 px-6 dark:bg-dark sm:p-[60px]">
                 <h3 className="mb-3 text-center text-2xl font-bold text-black dark:text-white sm:text-3xl">
-                  Create your account
+                  Create an account
                 </h3>
                 <p className="mb-11 text-center text-base font-medium text-body-color">
-                  It’s totally free and super easy
+                  Only for admins
                 </p>
+
+                {/* GOOGLE SIGN UP
                 <button className="mb-6 flex w-full items-center justify-center rounded-md bg-white p-3 text-base font-medium text-body-color shadow-one hover:text-primary dark:bg-[#242B51] dark:text-body-color dark:shadow-signUp dark:hover:text-white">
                   <span className="mr-3">
                     <svg
@@ -49,28 +85,30 @@ const SignupPage = () => {
                     </svg>
                   </span>
                   Sign up with Google
-                </button>
+                </button> */}
+
                 <div className="mb-8 flex items-center justify-center">
                   <span className="hidden h-[1px] w-full max-w-[60px] bg-body-color sm:block"></span>
                   <p className="w-full px-5 text-center text-base font-medium text-body-color">
-                    Or, register with your email
+                    User Registration
                   </p>
                   <span className="hidden h-[1px] w-full max-w-[60px] bg-body-color sm:block"></span>
                 </div>
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className="mb-8">
                     <label
                       htmlFor="name"
                       className="mb-3 block text-sm font-medium text-dark dark:text-white"
                     >
                       {" "}
-                      Full Name{" "}
+                      Name{" "}
                     </label>
                     <input
                       type="text"
                       name="name"
-                      placeholder="Enter your full name"
+                      placeholder="Enter name"
                       className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
+                      required
                     />
                   </div>
                   <div className="mb-8">
@@ -79,13 +117,14 @@ const SignupPage = () => {
                       className="mb-3 block text-sm font-medium text-dark dark:text-white"
                     >
                       {" "}
-                      Work Email{" "}
+                      Email{" "}
                     </label>
                     <input
                       type="email"
                       name="email"
-                      placeholder="Enter your Email"
+                      placeholder="Enter email"
                       className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
+                      required
                     />
                   </div>
                   <div className="mb-8">
@@ -94,13 +133,14 @@ const SignupPage = () => {
                       className="mb-3 block text-sm font-medium text-dark dark:text-white"
                     >
                       {" "}
-                      Your Password{" "}
+                      Password{" "}
                     </label>
                     <input
                       type="password"
                       name="password"
-                      placeholder="Enter your Password"
+                      placeholder="Enter password"
                       className="w-full rounded-md border border-transparent py-3 px-6 text-base text-body-color placeholder-body-color shadow-one outline-none focus:border-primary focus-visible:shadow-none dark:bg-[#242B51] dark:shadow-signUp"
+                      required
                     />
                   </div>
                   <div className="mb-8 flex">
@@ -137,7 +177,7 @@ const SignupPage = () => {
                         By creating account means you agree to the
                         <a href="#0" className="text-primary hover:underline">
                           {" "}
-                          Terms and Conditions{" "}
+                          Terms of Service{" "}
                         </a>
                         , and our
                         <a href="#0" className="text-primary hover:underline">
@@ -153,8 +193,9 @@ const SignupPage = () => {
                     </button>
                   </div>
                 </form>
+                {err && "Something went wrong!"}
                 <p className="text-center text-base font-medium text-body-color">
-                  Already using Startup?
+                  Already have an account?
                   <Link href="/signin" className="text-primary hover:underline">
                     Sign in
                   </Link>

@@ -33,7 +33,9 @@ const Footer = () => {
                 </p>
                 <div className="flex items-center">
                   <a
-                    href="/"
+                    href="https://www.linkedin.com/company/v-cred/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="social-link"
                     className="mr-6 text-[#CED3F6] hover:text-primary"
                   >
@@ -100,7 +102,7 @@ const Footer = () => {
                 <ul>
                   <li>
                     <a
-                      href="/"
+                      href="/tos"
                       className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
                     >
                       {" "}
@@ -109,20 +111,11 @@ const Footer = () => {
                   </li>
                   <li>
                     <a
-                      href="/"
+                      href="/privacy"
                       className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
                     >
                       {" "}
                       Privacy Policy{" "}
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
-                    >
-                      {" "}
-                      Refund Policy{" "}
                     </a>
                   </li>
                 </ul>

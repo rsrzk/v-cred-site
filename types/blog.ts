@@ -7,7 +7,8 @@ type Author = {
 export type Blog = {
   id: number;
   title: string;
-  paragraph: string;
+  desc: string;
+  content: string;
   image: string;
   author: Author;
   tags: string[];

@@ -1,4 +1,3 @@
-import Blog from "@/components/Blog";
 import Brands from "@/components/Brands";
 import ScrollUp from "@/components/Common/ScrollUp";
 import Portfolio from "@/components/Portfolio";
@@ -14,7 +13,6 @@ export default function Home() {
       <Hero />
       <Portfolio />
       <Brands />
-      <Blog />
     </>
   );
 }

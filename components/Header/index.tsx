@@ -3,9 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
-import menuData from "./menuData";
+import { unauthenticatedMenuData, authenticatedMenuData } from "./menuData";
+import { signOut, useSession } from "next-auth/react";
 
 const Header = () => {
+  const session = useSession();
+  
   // Navbar toggle
   const [navbarOpen, setNavbarOpen] = useState(false);
   const navbarToggleHandler = () => {
@@ -34,6 +37,14 @@ const Header = () => {
       setOpenIndex(index);
     }
   };
+
+  const handleSignOut = async () => {
+    await signOut();
+  };
+
+  const menuData = session.status === "authenticated" ? authenticatedMenuData : unauthenticatedMenuData;
+
+  console.log("Session status:", session.status);
 
   return (
     <>
@@ -150,12 +161,22 @@ const Header = () => {
                 </nav>
               </div>
               <div className="flex items-center justify-end pr-16 lg:pr-0">
-                <Link
-                  href="/contact"
-                  className="ease-in-up hidden rounded-md bg-primary py-3 px-8 text-base font-bold text-white transition duration-300 hover:bg-opacity-90 hover:shadow-signUp md:block md:px-9 lg:px-6 xl:px-9"
-                >
-                  ✆ Schedule a call
-                </Link>
+                {session.status !== "authenticated" && (
+                  <Link
+                    href="/contact"
+                    className="ease-in-up hidden rounded-md bg-primary py-3 px-8 text-base font-bold text-white transition duration-300 hover:bg-opacity-90 hover:shadow-signUp md:block md:px-9 lg:px-6 xl:px-9"
+                  >
+                    ✆ Schedule a call
+                  </Link>
+                )}
+                {session.status === "authenticated" && (
+                  <button
+                    className="ease-in-up hidden rounded-md bg-primary py-3 px-8 text-base font-bold text-white transition duration-300 hover:bg-opacity-90 hover:shadow-signUp md:block md:px-9 lg:px-6 xl:px-9"
+                    onClick={() => handleSignOut()}
+                  >
+                  Sign out
+                  </button>
+                )}
                 <div>
                   <ThemeToggler />
                 </div>

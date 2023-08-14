@@ -1,25 +1,35 @@
 import SingleBlog from "@/components/Blog/SingleBlog";
-import blogData from "@/components/Blog/blogData";
 import Breadcrumb from "@/components/Common/Breadcrumb";
+import Link from "next/link";
 
-const Blog = () => {
+async function getData() {
+  const res = await fetch('http://localhost:3000/api/posts', {
+    cache: "no-store",
+  })
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
+ 
+  return res.json()
+}
+
+const Blog = async () => {
+  const data = await getData()
   return (
     <>
       <Breadcrumb
         pageName="Blog Grid"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
+        description="Check out our blog as we discuss lessons learned from case studies and our experience building a data analytics startup."
       />
 
       <section className="pt-[120px] pb-[120px]">
         <div className="container">
           <div className="-mx-4 flex flex-wrap justify-center">
-            {blogData.map((blog) => (
-              <div
-                key={blog.id}
-                className="w-full px-4 md:w-2/3 lg:w-1/2 xl:w-1/3"
-              >
-                <SingleBlog blog={blog} />
-              </div>
+            {data.map((item) =>(
+              <Link href={`blog/${item._id}`} key={item.id}>
+                <SingleBlog blog={item} />
+              </Link>
             ))}
           </div>
 
