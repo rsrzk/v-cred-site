@@ -16,8 +16,8 @@ async function getData() {
 
     return res.json();
   } catch (error) {
-    console.error('API Error:', error);
-    throw error;
+    console.error('API Error:', error.message);
+    throw new Error('Failed to fetch data');
   }
 }
 
