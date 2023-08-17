@@ -34,9 +34,9 @@ const Blog = async () => {
         <div className="container">
           <div className="-mx-4 flex flex-wrap justify-center">
             {data.map((item) =>(
-              <Link href={`blog/${item._id}`} key={item.id}>
-                <SingleBlog blog={item} />
-              </Link>
+              <div key={item.id}>
+                <SingleBlog blog={item} itemId={item._id}  />
+              </div>
             ))}
           </div>
 
