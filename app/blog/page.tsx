@@ -1,3 +1,5 @@
+'use client'
+import React, { useState, useEffect } from 'react';
 import SingleBlog from "@/components/Blog/SingleBlog";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 
@@ -20,12 +22,28 @@ async function getData() {
   } catch (error) {
     const errorMessage = `Fetch Error: ${error.message}`;
     console.error(errorMessage);
-    //throw new Error(errorMessage);
+    throw new Error(errorMessage);
   }
 }
 
-const Blog = async () => {
-  const data = await getData()
+const Blog = () => {
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const fetchedData = await getData();
+        setData(fetchedData);
+        setError(null);
+      } catch (error) {
+        setError('Failed to fetch data');
+      }
+    }
+
+    fetchData();
+  }, []);
+
   return (
     <>
       <Breadcrumb
@@ -35,14 +53,21 @@ const Blog = async () => {
 
       <section className="pt-[120px] pb-[120px]">
         <div className="container">
-          <div className="-mx-4 flex flex-wrap justify-center">
-            {data.map((item) =>(
-              <div key={item.id}>
-                <SingleBlog blog={item} itemId={item._id}  />
-              </div>
-            ))}
-          </div>
-
+          {error ? (
+            <div>Error: {error}</div>
+          ) : (
+            <div className="-mx-4 flex flex-wrap justify-center">
+              {data.length === 0 ? (
+                <div>No data available.</div>
+              ) : (
+                data.map((item) => (
+                  <div key={item.id}>
+                    <SingleBlog blog={item} itemId={item._id} />
+                  </div>
+                ))
+              )}
+            </div>
+          )}
           <div
             className="wow fadeInUp -mx-4 flex flex-wrap"
             data-wow-delay=".15s"
