@@ -1,6 +1,5 @@
 import AboutSectionOne from "@/components/About/AboutSectionOne";
 import AboutTeam from "@/components/About/AboutTeam";
-import Timeline from "@/components/About/Timeline";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 
 const AboutPage = () => {
