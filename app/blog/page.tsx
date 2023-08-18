@@ -1,23 +1,26 @@
 import SingleBlog from "@/components/Blog/SingleBlog";
 import Breadcrumb from "@/components/Common/Breadcrumb";
-import Link from "next/link";
 
 async function getData() {
   const apiUrl = process.env.REACT_APP_API_URL;
+
   try {
-    const res = await fetch(`${apiUrl}/api/posts`, {
+    const response = await fetch(`${apiUrl}/api/posts`, {
       cache: "no-store",
     });
 
-    if (!res.ok) {
-      console.error(`API Error: Response status ${res.status}`);
-      throw new Error('Failed to fetch data');
+    if (!response.ok) {
+      const errorMessage = `API Error: Response status ${response.status} - ${response.statusText}`;
+      console.error(errorMessage);
+      throw new Error(errorMessage);
     }
 
-    return res.json();
+    const data = await response.json();
+    return data;
   } catch (error) {
-    console.error('API Error:', error.message);
-    throw new Error('Failed to fetch data');
+    const errorMessage = `Fetch Error: ${error.message}`;
+    console.error(errorMessage);
+    //throw new Error(errorMessage);
   }
 }
 
