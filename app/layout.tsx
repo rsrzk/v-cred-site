@@ -1,37 +1,18 @@
-"use client";
+import type { ReactNode } from 'react';
+import { AppWrapper } from "./wrapper";
+import { Metadata } from "next";
 
-import AuthProvider from "@/components/AuthProvider/AuthProvider";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import ScrollToTop from "@/components/ScrollToTop";
-import "node_modules/react-modal-video/css/modal-video.css";
-import "../styles/index.css";
+export const metadata: Metadata = {
+  title: 'V-Cred',
+  description: 'Data Analytics Solutions',
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html suppressHydrationWarning lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
-
       <body className= "dark:bg-black">
-        <Providers>
-          <AuthProvider>
-            <Header />
-            {children}
-            <Footer />
-            <ScrollToTop />
-          </AuthProvider>
-        </Providers>
+        <AppWrapper>{children}</AppWrapper>
       </body>
     </html>
   );
 }
-
-import { Providers } from "./providers";

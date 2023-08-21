@@ -1,4 +1,3 @@
-'use client'
 import React, { useState, useEffect } from 'react';
 import SingleBlog from "@/components/Blog/SingleBlog";
 import Breadcrumb from "@/components/Common/Breadcrumb";
@@ -6,45 +5,20 @@ import PageScrollButton from "@/components/Blog/PageScrollButton";
 
 async function getData() {
   const apiUrl = process.env.REACT_APP_API_URL;
+  const response = await fetch(`${apiUrl}/api/posts`, {
+    cache: "no-store",
+  });
 
-  try {
-    const response = await fetch(`${apiUrl}/api/posts`, {
-      cache: "no-store",
-    });
-
-    if (!response.ok) {
-      const errorMessage = `API Error: Response status ${response.status} - ${response.statusText}`;
-      console.error(errorMessage);
-      throw new Error(errorMessage);
-    }
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    const errorMessage = `Fetch Error: ${error.message}`;
-    console.error(errorMessage);
-    throw new Error(errorMessage);
+  if (!response.ok) {
+    // throw new Error('Failed to fetch data')
+    console.log("failuree")
   }
+
+  return response.json();
 }
 
-const Blog = () => {
-  const [data, setData] = useState([]);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const fetchedData = await getData();
-        setData(fetchedData);
-        setError(null);
-      } catch (error) {
-        setError('Failed to fetch data');
-      }
-    }
-
-    fetchData();
-  }, []);
-
+const Blog = async () => {
+  const data = await getData();
   return (
     <>
       <Breadcrumb
@@ -61,7 +35,7 @@ const Blog = () => {
               {data.length === 0 ? (
                 <div>No data available.</div>
               ) : (
-                data.map((item) => (
+                data.map((item: any) => (
                   <div key={item.id}>
                     <SingleBlog blog={item} itemId={item._id} />
                   </div>
