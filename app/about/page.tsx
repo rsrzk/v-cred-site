@@ -9,7 +9,6 @@ const AboutPage = () => {
         pageName="About Page"
         description="Our journey as a PETRONAS-backed startup."
       />
-      {/* <Timeline /> */}
       <AboutSectionOne />
       <AboutTeam />
     </>
