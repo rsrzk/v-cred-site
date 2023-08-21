@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import SingleBlog from "@/components/Blog/SingleBlog";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import PageScrollButton from "@/components/Blog/PageScrollButton";
@@ -10,8 +9,7 @@ async function getData() {
   });
 
   if (!response.ok) {
-    // throw new Error('Failed to fetch data')
-    console.log("failuree")
+    throw new Error('Failed to fetch data')
   }
 
   return response.json();
@@ -28,21 +26,13 @@ const Blog = async () => {
 
       <section className="pt-[120px] pb-[120px]">
         <div className="container">
-          {error ? (
-            <div>Error: {error}</div>
-          ) : (
-            <div className="-mx-4 flex flex-wrap justify-center">
-              {data.length === 0 ? (
-                <div>No data available.</div>
-              ) : (
-                data.map((item: any) => (
-                  <div key={item.id}>
-                    <SingleBlog blog={item} itemId={item._id} />
-                  </div>
-                ))
-              )}
-            </div>
-          )}
+          <div className="-mx-4 flex flex-wrap justify-center">
+            {data.map((item: any) => (
+              <div key={item.id}>
+                <SingleBlog blog={item} itemId={item._id} />
+              </div>
+            ))}
+          </div>
         </div>
         <PageScrollButton />
       </section>
