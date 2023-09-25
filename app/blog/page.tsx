@@ -16,7 +16,8 @@ async function getData() {
 }
 
 const Blog = async () => {
-  const data = await getData();
+  // const data = await getData();
+  const data = [];
   return (
     <>
       <Breadcrumb

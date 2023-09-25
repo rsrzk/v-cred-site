@@ -63,7 +63,7 @@ const Footer = () => {
                   Useful Links
                 </h2>
                 <ul>
-                  <li>
+                  {/* <li>
                     <a
                       href="/blog"
                       className="mb-4 inline-block text-base font-medium text-body-color hover:text-primary"
@@ -71,7 +71,7 @@ const Footer = () => {
                       {" "}
                       Blog{" "}
                     </a>
-                  </li>
+                  </li> */}
                   <li>
                     <a
                       href="/about"

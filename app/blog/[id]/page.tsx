@@ -16,10 +16,11 @@ async function getData(id: string) {
 }
 
 const BlogDetailsPage = async ({params}) => {
-  const data = await getData(params.id)
+  // const data = await getData(params.id)
+  const data = []
   return (
     <>
-      <section className="pt-[150px] pb-[120px]">
+      {/* <section className="pt-[150px] pb-[120px]">
         <div className="container">
           <div className="-mx-4 flex flex-wrap justify-center">
             <div className="w-full px-4 lg:w-8/12">
@@ -129,7 +130,7 @@ const BlogDetailsPage = async ({params}) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };
