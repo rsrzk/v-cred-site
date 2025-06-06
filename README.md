@@ -9,7 +9,7 @@ This website was created for V-Cred (early stage software startup) back when we 
 <img width="1102" alt="image" src="https://github.com/user-attachments/assets/e8f54498-4328-43bc-ac4b-c72f09047140" />
 
 
-This was previously hosted on vercel using our https://v-cred.com domain. It can now still be found on https://v-cred-site.vercel.app/ . It was created using next.js and typescript.
+This was previously hosted on vercel using our https://v-cred.com domain (now deprecated). It can now still be found on https://v-cred-site.vercel.app/ . It was created using next.js and typescript.
 
 Using free Next.js startup website template (https://nextjstemplates.com/templates/saas-starter-startup)
 
